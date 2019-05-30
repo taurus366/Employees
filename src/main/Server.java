@@ -13,41 +13,62 @@ public class Server {
 		keyboard = new Scanner(System.in);
 		ArrayList<Employees> employees = new ArrayList<>();
 		int employee1totalSales=0;
+		int employee1salesPeriod=0;
+		double employee1experienceMultiplier = 0;
 		
 		do {
 			System.out.println("Please enter your name: ");
 			String employee1name = keyboard.next();
-			boolean istrue = true;
+			boolean isINT = true;
 			do {
 				System.out.println("Please enter employee totalSales: ");
-//				if(keyboard.hasNextInt()) {
-//					employee1totalSales=keyboard.nextInt();
-//					istrue = true;
-//				}else {
-//					istrue = false;
-//					keyboard.nextLine();
-//				}
+
 				try {
 				employee1totalSales = keyboard.nextInt();
-				istrue = true;
+				isINT = true;
 				} catch (Exception e) {
 					// TODO: handle exception
-					istrue=false;
+					isINT=false;
 					keyboard.nextLine();
 				}
 				
-			} while (!istrue == true);
-			//System.out.println("Please enter employee totalSales: ");
-			//int employee1totalSales = keyboard.nextInt();
+			} while (!isINT == true);
 			
-			System.out.println("Please enter employee salesPeriod: ");
-			int employee1salesPeriod = keyboard.nextInt();
 			
-			System.out.println("Please enter employee experienceMultiplier: ");
-			double employee1experienceMultiplier = keyboard.nextDouble();
+			do {
+				System.out.println("Please enter employee salesPeriod: ");
+				try {
+					employee1salesPeriod = keyboard.nextInt();
+					isINT= true;
+				} catch (Exception e) {
+					// TODO: handle exception
+					isINT=false;
+					keyboard.nextLine();
+				}
+				
+			} while (!isINT == true);
+			
+			
+			
+			do {
+				System.out.println("Please enter employee experienceMultiplier: ");
+				
+				try {
+					 employee1experienceMultiplier = keyboard.nextDouble();
+					 isINT = true;
+				} catch (Exception e) {
+					// TODO: handle exception
+					isINT = false;
+					keyboard.nextLine();
+				}
+				
+			} while (!isINT == true);
+			
+			
 		
 			Employees employee = new Employees(employee1name, employee1totalSales, employee1salesPeriod, employee1experienceMultiplier);
 			employees.add(employee);
+			
 			System.out.println("Do you want to add more? yes/no");
 			
 			
