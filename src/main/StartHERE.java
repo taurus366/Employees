@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 
-import Databases.InsertEmployeeIntoDB;
+import Databases.InsertIntoDB;
+import Databases.ReadfromDB;
 import console.AddEmployee;
 import models.Employees;
 
@@ -27,7 +28,7 @@ public class StartHERE {
 		if (answer.equals("yes")) {
 			System.out.println(employees.size());
 			
-			InsertEmployeeIntoDB.insertIntoDatabase(gson.toJson(employees));
+			InsertIntoDB.insertIntoDatabase(gson.toJson(employees));
 
 		}
 		
@@ -35,7 +36,9 @@ public class StartHERE {
 		String answer2 = keyboard.next();
 		
 		if(answer2.equals("yes")) {
+			System.out.println(ReadfromDB.readDataFromDatabaseCandidate());
 			
+			//ReadfromDB.readDataFromDatabaseCandidate();
 		}
 
 	}

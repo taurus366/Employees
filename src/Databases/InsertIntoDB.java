@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class InsertEmployeeIntoDB {
+public class InsertIntoDB {
 
 	public static void insertIntoDatabase(String myData) {
 
