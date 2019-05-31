@@ -7,7 +7,7 @@ import models.Employees;
 
 public class AddEmployee {
 	private static Scanner keyboard;
-
+	public static String answer = null;
 	public static void AddEmployees() {
 
 		keyboard = new Scanner(System.in);
@@ -15,10 +15,10 @@ public class AddEmployee {
 		int employee1totalSales = 0;
 		int employee1salesPeriod = 0;
 		double employee1experienceMultiplier = 0;
-
+		
 		do {
 			System.out.println("Please enter your name: ");
-			String employee1name = keyboard.next();
+			String employee1name = keyboard.nextLine();
 			boolean isINT = true;
 			do {
 				System.out.println("Please enter employee totalSales: ");
@@ -67,7 +67,9 @@ public class AddEmployee {
 			StartHERE.employees.add(employee);
 
 			System.out.println("Do you want to add more? yes/no");
+			answer = keyboard.next(); 
+			keyboard.nextLine();
 
-		} while (keyboard.next().equals("yes"));
+		} while (answer.equals("yes"));
 	}
 }

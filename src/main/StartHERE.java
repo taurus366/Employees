@@ -37,8 +37,13 @@ public class StartHERE {
 		
 		if(answer2.equals("yes")) {
 			System.out.println(ReadfromDB.readDataFromDatabaseCandidate());
+			for (int i=0;i<ReadfromDB.readDataFromDatabaseCandidate().size();i++) {
+				Employees readfromdb = ReadfromDB.readDataFromDatabaseCandidate().get(i);
+				System.out.println(readfromdb.name + readfromdb.totalSales + readfromdb.salesPeriod + readfromdb.experienceMultiplier);
+			}
 			
 			//ReadfromDB.readDataFromDatabaseCandidate();
+			
 		}
 
 	}
