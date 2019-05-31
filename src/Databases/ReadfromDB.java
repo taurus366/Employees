@@ -17,7 +17,8 @@ import models.Employees;
 public class ReadfromDB {
 
 	public static ArrayList<Employees> readDataFromDatabaseCandidate() {
-		String database_file_location = "W:\\Users\\newArcerr\\Desktop\\employees.txt";
+		//String database_file_location = "W:\\Users\\newArcerr\\Desktop\\employees.txt";
+		String database_file_location = "C:\\Users\\taurus366\\Desktop\\employees.txt";
 		
 		File txtFile = new File(database_file_location);
 		if (!txtFile.exists())
