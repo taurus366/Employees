@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
+import main.StartHERE;
 import models.Employees;
 
 
@@ -17,10 +18,9 @@ import models.Employees;
 public class ReadfromDB {
 
 	public static ArrayList<Employees> readDataFromDatabaseCandidate() {
-		//String database_file_location = "W:\\Users\\newArcerr\\Desktop\\employees.txt";
-		String database_file_location = "C:\\Users\\taurus366\\Desktop\\employees.txt";
 		
-		File txtFile = new File(database_file_location);
+		
+		File txtFile = new File(StartHERE.database_file_location);
 		if (!txtFile.exists())
 			log("File doesn't exist");
  
@@ -33,7 +33,7 @@ public class ReadfromDB {
 		   Type listType = new TypeToken<ArrayList<Employees>>() {}.getType();
 		   ArrayList<Employees> employees = new Gson().fromJson(myReader, listType);
            
-           log("\n Employees Data loaded successfully from file " + database_file_location);
+          
            return employees;
 			
 		} catch (Exception e) {

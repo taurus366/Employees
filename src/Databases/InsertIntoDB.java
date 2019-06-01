@@ -5,13 +5,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class InsertIntoDB {
+import main.StartHERE;
+
+public class InsertIntoDB extends StartHERE {
 
 	public static void insertIntoDatabase(String myData) {
 
-		//String database_file_location = "W:\\Users\\newArcerr\\Desktop\\employees.txt";
-		String database_file_location = "C:\\Users\\taurus366\\Desktop\\employees.txt";
-		File txtFile = new File(database_file_location);
+		
+		File txtFile = new File(StartHERE.database_file_location);
 		if (!txtFile.exists()) {
 			try {
 				File directory = new File(txtFile.getParent());
@@ -36,7 +37,7 @@ public class InsertIntoDB {
 			bufferWriter.write(myData.toString());
 			bufferWriter.close();
 
-			log("Employee saved at file location: " + database_file_location + " Data: " + myData + "\n");
+			log("Employee saved at file location: " + StartHERE.database_file_location + " Data: " + myData + "\n");
 		} catch (IOException e) {
 			log("Hmm.. Got an error while saving Employee data to file " + e.toString());
 		}
