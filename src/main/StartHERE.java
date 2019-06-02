@@ -6,14 +6,14 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 
-import Databases.InsertIntoDB;
-import Databases.ReadfromDB;
-import GenerateCSV.generatecsvfile;
 import console.AddEmployee;
+import databases.InsertIntoDB;
+import databases.ReadfromDB;
+import generator.Generatecsvfile;
 import models.Employees;
 
 public class StartHERE {
-	public static String database_file_location = "C:\\Users\\taurus366\\Desktop\\employees.txt";
+	public static String database_file_location = "W:\\Users\\newArcerr\\Desktop\\employees.txt"; // Please choose your .txt file location !
 	public static ArrayList<Employees> employees = new ArrayList<>();
 	public static Scanner keyboard;
 
@@ -25,6 +25,10 @@ public class StartHERE {
 
 	}
 
+	/** InsertIntoDB.insertIntoDatabase(gson.toJson(employees)); -> add employees to .txt file Json format.
+	 * generatecsvfile.GenerateCSVfile(); -> generate CSV file with employees score.
+	 * @throws IOException
+	 */
 	public static void Question() throws IOException {
 		Gson gson = new Gson();
 		keyboard = new Scanner(System.in);
@@ -45,8 +49,8 @@ public class StartHERE {
 
 			for (int i = 0; i < ReadfromDB.readDataFromDatabaseCandidate().size(); i++) {
 				Employees readfromdb = ReadfromDB.readDataFromDatabaseCandidate().get(i);
-				System.out.println(readfromdb.name + readfromdb.totalSales + readfromdb.salesPeriod
-						+ readfromdb.experienceMultiplier);
+				System.out.println( "name: "+readfromdb.name +" "+"totalSales: "+ readfromdb.totalSales +" "+"salesPeriod: "+ readfromdb.salesPeriod+" "
+						+"experienceMultiplier: "+ readfromdb.experienceMultiplier);
 
 			}
 
@@ -54,7 +58,7 @@ public class StartHERE {
 		System.out.println("Do you want to generate score(name,score) from saved employees txt file? (yes/no)");
 		String answer3 = keyboard.next();
 		if (answer3.equals("yes")) {
-			generatecsvfile.GenerateCSVfile();
+			Generatecsvfile.GenerateCSVfile();
 		}
 	}
 

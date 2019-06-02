@@ -1,4 +1,4 @@
-package GenerateCSV;
+package generator;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,14 +6,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Databases.ReadfromDB;
+import databases.ReadfromDB;
 import models.Employees;
 import models.CSVemployees;
 
-public class generatecsvfile{
+public class Generatecsvfile{
 	private static ArrayList<CSVemployees> choosedEmployees = new ArrayList<>();
+	
 	public static  void GenerateCSVfile() throws IOException {
-		File file = new File("test.csv");
+		File file = new File("scores.csv");
 		FileWriter fw = new FileWriter(file);
 		BufferedWriter bw = new BufferedWriter(fw);
 		
@@ -40,8 +41,8 @@ public class generatecsvfile{
 				choosedEmployees.add(employ);
 			}else {
 				double result = emp.totalSales/emp.salesPeriod*emp.experienceMultiplier;
-				CSVemployees employ = new CSVemployees(emp.name, result);
-				choosedEmployees.add(employ);
+				CSVemployees employee = new CSVemployees(emp.name, result);
+				choosedEmployees.add(employee);
 				
 			}
 			

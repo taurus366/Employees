@@ -1,4 +1,4 @@
-package Databases;
+package databases;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import main.StartHERE;
 
-public class InsertIntoDB extends StartHERE {
+public class InsertIntoDB {
 
 	public static void insertIntoDatabase(String myData) {
 
@@ -29,11 +29,11 @@ public class InsertIntoDB extends StartHERE {
 			txtFile.delete();
 
 			// Convenience class for writing character files
-			FileWriter academyWriter;
-			academyWriter = new FileWriter(txtFile.getAbsoluteFile(), true);
+			FileWriter FileWriter;
+			FileWriter = new FileWriter(txtFile.getAbsoluteFile(), true);
 
 			// Writes text to a character-output stream
-			BufferedWriter bufferWriter = new BufferedWriter(academyWriter);
+			BufferedWriter bufferWriter = new BufferedWriter(FileWriter);
 			bufferWriter.write(myData.toString());
 			bufferWriter.close();
 
