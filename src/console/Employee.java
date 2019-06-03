@@ -5,16 +5,17 @@ import java.util.Scanner;
 import main.StartHERE;
 import models.Employees;
 
-public class AddEmployee {
+public class Employee {
 	private static Scanner keyboard;
 	public static String answer = null;
+	
 	public static void AddEmployees() {
 
 		keyboard = new Scanner(System.in);
 
-		int employee1totalSales = 0;
-		int employee1salesPeriod = 0;
-		double employee1experienceMultiplier = 0;
+		int employeeTotalSales = 0;
+		int employeeSalesPeriod = 0;
+		double employeeExperienceMultiplier = 0;
 		
 		do {
 			System.out.println("Please enter your name: ");
@@ -24,7 +25,7 @@ public class AddEmployee {
 				System.out.println("Please enter employee totalSales: ");
 
 				try {
-					employee1totalSales = keyboard.nextInt();
+					employeeTotalSales = keyboard.nextInt();
 					isINT = true;
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -37,7 +38,7 @@ public class AddEmployee {
 			do {
 				System.out.println("Please enter employee salesPeriod: ");
 				try {
-					employee1salesPeriod = keyboard.nextInt();
+					employeeSalesPeriod = keyboard.nextInt();
 					isINT = true;
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -51,7 +52,7 @@ public class AddEmployee {
 				System.out.println("Please enter employee experienceMultiplier: ");
 
 				try {
-					employee1experienceMultiplier = keyboard.nextDouble();
+					employeeExperienceMultiplier = keyboard.nextDouble();
 					isINT = true;
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -61,8 +62,8 @@ public class AddEmployee {
 
 			} while (!isINT == true);
 
-			Employees employee = new Employees(employee1name, employee1totalSales, employee1salesPeriod,
-					employee1experienceMultiplier);
+			Employees employee = new Employees(employee1name, employeeTotalSales, employeeSalesPeriod,
+					employeeExperienceMultiplier);
 
 			StartHERE.employees.add(employee);
 

@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 
-import console.AddEmployee;
+import console.Employee;
 import databases.InsertIntoDB;
 import databases.ReadfromDB;
-import generator.Generatecsvfile;
+import generator.CsvFile;
 import models.Employees;
 
 public class StartHERE {
@@ -18,9 +18,9 @@ public class StartHERE {
 	public static Scanner keyboard;
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+		
 
-		AddEmployee.AddEmployees();
+		Employee.AddEmployees();
 		Question();
 
 	}
@@ -58,7 +58,9 @@ public class StartHERE {
 		System.out.println("Do you want to generate score(name,score) from saved employees txt file? (yes/no)");
 		String answer3 = keyboard.next();
 		if (answer3.equals("yes")) {
-			Generatecsvfile.GenerateCSVfile();
+			CsvFile.GenerateCSVfile();
+		}else {
+			System.out.println("Thank you, bye for next time.");
 		}
 	}
 

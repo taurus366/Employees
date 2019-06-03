@@ -10,8 +10,8 @@ import databases.ReadfromDB;
 import models.Employees;
 import models.CSVemployees;
 
-public class Generatecsvfile{
-	private static ArrayList<CSVemployees> choosedEmployees = new ArrayList<>();
+public class CsvFile{
+	private static ArrayList<CSVemployees> scoredEmployees = new ArrayList<>();
 	
 	public static  void GenerateCSVfile() throws IOException {
 		File file = new File("scores.csv");
@@ -22,8 +22,8 @@ public class Generatecsvfile{
 		
 		bw.write("Name , Score");
 		bw.newLine();
-		for(int i =0;i<choosedEmployees.size();i++) {
-			CSVemployees employees = choosedEmployees.get(i);
+		for(int i =0;i<scoredEmployees.size();i++) {
+			CSVemployees employees = scoredEmployees.get(i);
 			bw.write(employees.name+","+employees.score);
 			bw.newLine();
 		}
@@ -38,11 +38,11 @@ public class Generatecsvfile{
 			if(emp.experienceMultiplier ==0) {
 				int result = emp.totalSales/emp.salesPeriod;
 				CSVemployees employ = new CSVemployees(emp.name, result);
-				choosedEmployees.add(employ);
+				scoredEmployees.add(employ);
 			}else {
 				double result = emp.totalSales/emp.salesPeriod*emp.experienceMultiplier;
 				CSVemployees employee = new CSVemployees(emp.name, result);
-				choosedEmployees.add(employee);
+				scoredEmployees.add(employee);
 				
 			}
 			
